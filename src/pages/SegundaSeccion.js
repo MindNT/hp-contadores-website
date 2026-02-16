@@ -34,7 +34,7 @@ const SegundaSeccion = () => {
             {/* Logos de clientes */}
             <div className="flex items-center justify-center gap-12">
                 <img
-                    src="/images/cliente.png"
+                    src={`${process.env.PUBLIC_URL}/images/cliente.png`}
                     alt="Cliente 1"
                     style={{
                         height: '150px',
@@ -44,7 +44,7 @@ const SegundaSeccion = () => {
                     }}
                 />
                 <img
-                    src="/images/cliente2.png"
+                    src={`${process.env.PUBLIC_URL}/images/cliente2.png`}
                     alt="Cliente 2"
                     style={{
                         height: '150px',
@@ -54,7 +54,7 @@ const SegundaSeccion = () => {
                     }}
                 />
                 <img
-                    src="/images/cliente3.png"
+                    src={`${process.env.PUBLIC_URL}/images/cliente3.png`}
                     alt="Cliente 3"
                     style={{
                         height: '150px',

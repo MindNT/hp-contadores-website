@@ -37,7 +37,7 @@ const InicioMobile = () => {
                 {/* Imagen de la chica - Posicionada a la derecha */}
                 <div className="absolute bottom-0 right-0 w-[220px] h-[350px]">
                     <img
-                        src="/images/chica1.svg"
+                        src={`${process.env.PUBLIC_URL}/images/chica1.svg`}
                         alt="Profesional"
                         className="w-full h-full object-contain"
                         style={{

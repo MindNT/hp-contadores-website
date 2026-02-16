@@ -50,7 +50,7 @@ const TerceraSeccionMobile = () => {
                             }}
                         >
                             <img
-                                src="/images/check-icon.svg"
+                                src={`${process.env.PUBLIC_URL}/images/check-icon.svg`}
                                 alt="Check"
                                 className="w-[20px] h-[20px]"
                             />
@@ -80,7 +80,7 @@ const TerceraSeccionMobile = () => {
                             }}
                         >
                             <img
-                                src="/images/check-icon.svg"
+                                src={`${process.env.PUBLIC_URL}/images/check-icon.svg`}
                                 alt="Check"
                                 className="w-[20px] h-[20px]"
                             />
@@ -110,7 +110,7 @@ const TerceraSeccionMobile = () => {
                             }}
                         >
                             <img
-                                src="/images/check-icon.svg"
+                                src={`${process.env.PUBLIC_URL}/images/check-icon.svg`}
                                 alt="Check"
                                 className="w-[20px] h-[20px]"
                             />
@@ -140,7 +140,7 @@ const TerceraSeccionMobile = () => {
                             }}
                         >
                             <img
-                                src="/images/check-icon.svg"
+                                src={`${process.env.PUBLIC_URL}/images/check-icon.svg`}
                                 alt="Check"
                                 className="w-[20px] h-[20px]"
                             />

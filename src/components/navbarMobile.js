@@ -40,7 +40,7 @@ const NavbarMobile = () => {
                 {/* Logo a la izquierda */}
                 <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
                     <img
-                        src="/images/logo.svg"
+                        src={`${process.env.PUBLIC_URL}/images/logo.svg`}
                         alt="HP Contadores Logo"
                         style={{ height: '40px' }}
                     />
@@ -50,7 +50,7 @@ const NavbarMobile = () => {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                     {/* Botón circular de WhatsApp */}
                     <CircleButton
-                        icon="/images/whatsaap-icon.svg"
+                        icon={`${process.env.PUBLIC_URL}/images/whatsaap-icon.svg`}
                         size="40px"
                         onClick={() => {
                             window.open('https://wa.me/5299911884459', '_blank');

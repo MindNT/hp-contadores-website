@@ -7,7 +7,7 @@ const TerceraSeccion = () => {
             {/* Imagen de la mujer profesional - Izquierda */}
             <div className="absolute left-0 bottom-0 w-[800px] h-[1000px]">
                 <img
-                    src="/images/chica2.png"
+                    src={`${process.env.PUBLIC_URL}/images/chica2.png`}
                     alt="Profesional"
                     className="w-full h-full object-contain"
                     style={{
@@ -61,7 +61,7 @@ const TerceraSeccion = () => {
                             }}
                         >
                             <img
-                                src="/images/check-icon.svg"
+                                src={`${process.env.PUBLIC_URL}/images/check-icon.svg`}
                                 alt="Check"
                                 className="w-[30px] h-[30px]"
                             />
@@ -91,7 +91,7 @@ const TerceraSeccion = () => {
                             }}
                         >
                             <img
-                                src="/images/check-icon.svg"
+                                src={`${process.env.PUBLIC_URL}/images/check-icon.svg`}
                                 alt="Check"
                                 className="w-[30px] h-[30px]"
                             />
@@ -121,7 +121,7 @@ const TerceraSeccion = () => {
                             }}
                         >
                             <img
-                                src="/images/check-icon.svg"
+                                src={`${process.env.PUBLIC_URL}/images/check-icon.svg`}
                                 alt="Check"
                                 className="w-[30px] h-[30px]"
                             />
@@ -151,7 +151,7 @@ const TerceraSeccion = () => {
                             }}
                         >
                             <img
-                                src="/images/check-icon.svg"
+                                src={`${process.env.PUBLIC_URL}/images/check-icon.svg`}
                                 alt="Check"
                                 className="w-[30px] h-[30px]"
                             />

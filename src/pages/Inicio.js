@@ -36,7 +36,7 @@ const Inicio = () => {
                 {/* Imagen de la chica */}
                 <div className="absolute left-[456px] top-[166px] w-[600px] h-[816px]">
                     <img
-                        src="/images/chica1.svg"
+                        src={`${process.env.PUBLIC_URL}/images/chica1.svg`}
                         alt="Profesional"
                         className="w-full h-full object-contain"
                         style={{

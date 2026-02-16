@@ -26,7 +26,7 @@ const Navbar = () => {
             {/* Logo a la izquierda */}
             <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
                 <img
-                    src="/images/logo.svg"
+                    src={`${process.env.PUBLIC_URL}/images/logo.svg`}
                     alt="HP Contadores Logo"
                     style={{ height: '60px' }}
                 />
