@@ -82,7 +82,7 @@ const Inicio = () => {
                         {/* Botón CTA */}
                         <BlueButton
                             text="Consultoria gratis"
-                            onClick={() => window.open('https://wa.me/5299991188459', '_blank')}
+                            onClick={() => window.open('https://wa.me/5299911884459', '_blank')}
                         />
                     </div>
                 </div>

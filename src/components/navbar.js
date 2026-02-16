@@ -78,7 +78,7 @@ const Navbar = () => {
                 {/* Botón Agendar cita */}
                 <BlueButton
                     text="Agendar cita"
-                    onClick={() => window.open('https://wa.me/5299991188459', '_blank')}
+                    onClick={() => window.open('https://wa.me/5299911884459', '_blank')}
                 />
             </div>
         </nav>
