@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/hp-contadores-website">
+    <Router>
       <div
         className="App"
         style={{
