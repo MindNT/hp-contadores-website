@@ -53,7 +53,7 @@ const NavbarMobile = () => {
                         icon={`${process.env.PUBLIC_URL}/images/whatsaap-icon.svg`}
                         size="40px"
                         onClick={() => {
-                            window.open('https://wa.me/5299911884459', '_blank');
+                            window.open('https://wa.me/529991188459', '_blank');
                         }}
                     />
 
