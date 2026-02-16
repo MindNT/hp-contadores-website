@@ -2,7 +2,6 @@ import React from 'react';
 import NavbarMobile from '../components/navbarMobile';
 import BlueButton from '../utils/BlueButton';
 import SegundaSeccionMobile from './SegundaSeccionMobile';
-import TerceraSeccionMobile from './TerceraSeccionMobile';
 
 const InicioMobile = () => {
     return (
@@ -13,17 +12,17 @@ const InicioMobile = () => {
             </div>
 
             {/* Hero Section - Primera sección */}
-            <section className="relative h-screen w-full snap-start overflow-hidden flex flex-col justify-center px-6">
+            <section className="relative min-h-screen w-full snap-start overflow-hidden flex flex-col justify-center px-5 py-20">
                 {/* CONTADORES - Texto de fondo */}
                 <div
-                    className="absolute top-[100px] left-0 right-0"
+                    className="absolute top-[90px] left-0 right-0"
                     style={{
-                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(153, 153, 153, 0.3) 100%)',
+                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(153, 153, 153, 0.25) 100%)',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
                         backgroundClip: 'text',
-                        fontSize: '50px',
-                        lineHeight: '55px',
+                        fontSize: '44px',
+                        lineHeight: '1.2',
                         fontFamily: "'Ropa Sans', sans-serif",
                         fontWeight: 400,
                         textAlign: 'center',
@@ -35,7 +34,7 @@ const InicioMobile = () => {
                 </div>
 
                 {/* Imagen de la chica - Posicionada a la derecha */}
-                <div className="absolute bottom-0 right-0 w-[220px] h-[350px]">
+                <div className="absolute bottom-0 right-0 w-[200px] h-[320px]">
                     <img
                         src={`${process.env.PUBLIC_URL}/images/chica1.svg`}
                         alt="Profesional"
@@ -48,30 +47,32 @@ const InicioMobile = () => {
                 </div>
 
                 {/* Contenido principal - Alineado a la izquierda */}
-                <div className="relative z-10 flex flex-col items-start" style={{ marginTop: '140px', maxWidth: '280px' }}>
+                <div className="relative z-10 flex flex-col items-start" style={{ marginTop: '130px', maxWidth: '280px' }}>
                     {/* Título principal */}
                     <h1
-                        className="text-[#D9D9D9] mb-6"
+                        className="text-[#E8E8E8] mb-5"
                         style={{
                             fontFamily: "'Roboto', sans-serif",
-                            fontWeight: 400,
-                            fontSize: '26px',
-                            lineHeight: '30px',
+                            fontWeight: 300,
+                            fontSize: '24px',
+                            lineHeight: '1.3',
                             textAlign: 'left',
+                            letterSpacing: '0.5px',
                         }}
                     >
-                        LA VERDADERA CONTADURIA PARA EMPRESAS
+                        La verdadera contaduría para empresas
                     </h1>
 
                     {/* Descripción */}
                     <p
-                        className="text-[#D9D9D9] mb-8"
+                        className="text-[#B8B8B8] mb-8"
                         style={{
                             fontFamily: "'Roboto', sans-serif",
-                            fontWeight: 400,
+                            fontWeight: 300,
                             fontSize: '14px',
-                            lineHeight: '18px',
+                            lineHeight: '1.6',
                             textAlign: 'left',
+                            letterSpacing: '0.2px',
                         }}
                     >
                         Deja la complejidad fiscal en manos expertas y recupera tu tiempo para lo que realmente importa: hacer escalar tu negocio. Sin sorpresas, solo resultados.
@@ -87,9 +88,6 @@ const InicioMobile = () => {
 
             {/* Segunda Sección */}
             <SegundaSeccionMobile />
-
-            {/* Tercera Sección */}
-            <TerceraSeccionMobile />
         </div>
     );
 };

@@ -5,9 +5,9 @@ import BlueButton from '../utils/BlueButton';
 const Navbar = () => {
     const navItems = [
         { name: 'Principios', href: '/principios', isRoute: true },
-        { name: 'Miembros', href: '#miembros', isRoute: false },
-        { name: 'Servicios', href: '#servicios', isRoute: false },
-        { name: 'Dudas', href: '#dudas', isRoute: false },
+        { name: 'FAQs', href: '/faqs', isRoute: true },
+        { name: 'Miembros', href: '/miembros', isRoute: true },
+        { name: 'Servicios', href: '/servicios', isRoute: true },
     ];
 
     return (

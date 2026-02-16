@@ -4,6 +4,12 @@ import Inicio from './pages/Inicio';
 import InicioMobile from './pages/InicioMobile';
 import Principios from './pages/Principios';
 import PrincipiosMobile from './pages/PrincipiosMobile';
+import Faqs from './pages/Faqs';
+import FaqsMobile from './pages/FaqsMobile';
+import Miembros from './pages/Miembros';
+import MiembrosMobile from './pages/MiembrosMobile';
+import TerceraSeccion from './pages/TerceraSeccion';
+import TerceraSeccionMobile from './pages/TerceraSeccionMobile';
 import './App.css';
 
 function App() {
@@ -39,6 +45,9 @@ function App() {
         <Routes>
           <Route path="/" element={isMobile ? <InicioMobile /> : <Inicio />} />
           <Route path="/principios" element={isMobile ? <PrincipiosMobile /> : <Principios />} />
+          <Route path="/faqs" element={isMobile ? <FaqsMobile /> : <Faqs />} />
+          <Route path="/miembros" element={isMobile ? <MiembrosMobile /> : <Miembros />} />
+          <Route path="/servicios" element={isMobile ? <TerceraSeccionMobile /> : <TerceraSeccion />} />
         </Routes>
       </div>
     </Router>

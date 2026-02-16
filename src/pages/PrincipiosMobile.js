@@ -32,43 +32,45 @@ const PrincipiosMobile = () => {
                 <NavbarMobile />
             </div>
 
-            <section className="relative h-screen w-full snap-start overflow-hidden flex flex-col items-center justify-center px-6">
+            <section className="relative min-h-screen w-full snap-start overflow-hidden flex flex-col items-center justify-center px-5 py-20">
                 {/* Título principal */}
                 <h2
-                    className="text-[#D9D9D9] mb-8"
+                    className="text-[#E8E8E8] mb-10"
                     style={{
                         fontFamily: "'Roboto', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '26px',
-                        lineHeight: '30px',
+                        fontWeight: 300,
+                        fontSize: '24px',
+                        lineHeight: '1.3',
                         textAlign: 'center',
+                        letterSpacing: '0.5px',
                     }}
                 >
-                    NUESTROS PRINCIPIOS
+                    Nuestros Principios
                 </h2>
 
-                {/* Grid de principios - 2x2 */}
-                <div className="grid grid-cols-1 gap-4" style={{ maxWidth: '340px', overflowY: 'auto', maxHeight: '70vh' }}>
+                {/* Grid de principios */}
+                <div className="w-full max-w-sm space-y-5" style={{ overflowY: 'auto', maxHeight: '70vh' }}>
                     {principios.map((principio, index) => (
                         <div
                             key={index}
                             style={{
-                                background: 'rgba(255, 255, 255, 0.05)',
-                                backdropFilter: 'blur(10px)',
-                                borderRadius: '12px',
+                                background: 'rgba(255, 255, 255, 0.03)',
+                                backdropFilter: 'blur(8px)',
+                                borderRadius: '8px',
                                 padding: '24px',
-                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                border: '1px solid rgba(255, 255, 255, 0.08)',
                             }}
                         >
                             {/* Número del principio */}
                             <div
-                                className="text-[#1852AE] mb-2"
+                                className="text-white mb-2"
                                 style={{
                                     fontFamily: "'Roboto', sans-serif",
-                                    fontWeight: 700,
-                                    fontSize: '32px',
-                                    lineHeight: '38px',
-                                    opacity: 0.6,
+                                    fontWeight: 400,
+                                    fontSize: '24px',
+                                    lineHeight: '1',
+                                    opacity: 0.7,
+                                    letterSpacing: '1px',
                                 }}
                             >
                                 {principio.numero}
@@ -76,12 +78,13 @@ const PrincipiosMobile = () => {
 
                             {/* Título del principio */}
                             <h3
-                                className="text-white mb-2"
+                                className="text-white mb-3"
                                 style={{
                                     fontFamily: "'Roboto', sans-serif",
-                                    fontWeight: 500,
-                                    fontSize: '18px',
-                                    lineHeight: '22px',
+                                    fontWeight: 400,
+                                    fontSize: '16px',
+                                    lineHeight: '1.3',
+                                    letterSpacing: '0.5px',
                                 }}
                             >
                                 {principio.titulo}
@@ -89,12 +92,13 @@ const PrincipiosMobile = () => {
 
                             {/* Descripción */}
                             <p
-                                className="text-[#D9D9D9]"
+                                className="text-[#B8B8B8]"
                                 style={{
                                     fontFamily: "'Roboto', sans-serif",
-                                    fontWeight: 400,
+                                    fontWeight: 300,
                                     fontSize: '14px',
-                                    lineHeight: '18px',
+                                    lineHeight: '1.6',
+                                    letterSpacing: '0.2px',
                                 }}
                             >
                                 {principio.descripcion}

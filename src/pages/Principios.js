@@ -32,88 +32,94 @@ const Principios = () => {
                 <Navbar />
             </div>
 
-            <section className="relative h-screen w-full snap-start overflow-hidden flex flex-col items-center justify-center">
-                {/* Título principal */}
-                <h2
-                    className="text-[#D9D9D9] mb-[80px]"
-                    style={{
-                        fontFamily: "'Roboto', sans-serif",
-                        fontWeight: 400,
-                        fontSize: '65px',
-                        lineHeight: '76px',
-                        textAlign: 'center',
-                    }}
-                >
-                    NUESTROS PRINCIPIOS
-                </h2>
+            <section className="relative min-h-screen w-full snap-start overflow-hidden flex flex-col items-center justify-center py-24 px-8">
+                {/* Container centrado con max-width */}
+                <div className="w-full max-w-5xl mx-auto">
+                    {/* Título principal */}
+                    <h2
+                        className="text-[#E8E8E8] mb-16"
+                        style={{
+                            fontFamily: "'Roboto', sans-serif",
+                            fontWeight: 300,
+                            fontSize: '36px',
+                            lineHeight: '1.3',
+                            textAlign: 'center',
+                            letterSpacing: '0.5px',
+                        }}
+                    >
+                        Nuestros Principios
+                    </h2>
 
-                {/* Grid de principios - 2x2 */}
-                <div className="grid grid-cols-2 gap-x-[60px] gap-y-[40px]" style={{ maxWidth: '1200px' }}>
-                    {principios.map((principio, index) => (
-                        <div
-                            key={index}
-                            className="relative"
-                            style={{
-                                background: 'rgba(255, 255, 255, 0.05)',
-                                backdropFilter: 'blur(10px)',
-                                borderRadius: '12px',
-                                padding: '40px',
-                                border: '1px solid rgba(255, 255, 255, 0.1)',
-                                transition: 'all 0.3s ease',
-                                width: '520px',
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                                e.currentTarget.style.transform = 'translateY(-5px)';
-                                e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = 'none';
-                            }}
-                        >
-                            {/* Número del principio */}
+                    {/* Grid de principios - 2x2 */}
+                    <div className="grid grid-cols-2 gap-8">
+                        {principios.map((principio, index) => (
                             <div
-                                className="text-[#1852AE] mb-4"
+                                key={index}
+                                className="relative group"
                                 style={{
-                                    fontFamily: "'Roboto', sans-serif",
-                                    fontWeight: 700,
-                                    fontSize: '48px',
-                                    lineHeight: '56px',
-                                    opacity: 0.6,
+                                    background: 'rgba(255, 255, 255, 0.03)',
+                                    backdropFilter: 'blur(8px)',
+                                    borderRadius: '8px',
+                                    padding: '32px',
+                                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
+                                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                                    e.currentTarget.style.transform = 'translateY(0)';
                                 }}
                             >
-                                {principio.numero}
+                                {/* Número del principio */}
+                                <div
+                                    className="text-white mb-3"
+                                    style={{
+                                        fontFamily: "'Roboto', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: '28px',
+                                        lineHeight: '1',
+                                        opacity: 0.7,
+                                        letterSpacing: '1px',
+                                    }}
+                                >
+                                    {principio.numero}
+                                </div>
+
+                                {/* Título del principio */}
+                                <h3
+                                    className="text-white mb-4"
+                                    style={{
+                                        fontFamily: "'Roboto', sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: '20px',
+                                        lineHeight: '1.3',
+                                        letterSpacing: '0.5px',
+                                    }}
+                                >
+                                    {principio.titulo}
+                                </h3>
+
+                                {/* Descripción */}
+                                <p
+                                    className="text-[#B8B8B8]"
+                                    style={{
+                                        fontFamily: "'Roboto', sans-serif",
+                                        fontWeight: 300,
+                                        fontSize: '15px',
+                                        lineHeight: '1.6',
+                                        letterSpacing: '0.2px',
+                                    }}
+                                >
+                                    {principio.descripcion}
+                                </p>
                             </div>
-
-                            {/* Título del principio */}
-                            <h3
-                                className="text-white mb-3"
-                                style={{
-                                    fontFamily: "'Roboto', sans-serif",
-                                    fontWeight: 500,
-                                    fontSize: '28px',
-                                    lineHeight: '33px',
-                                }}
-                            >
-                                {principio.titulo}
-                            </h3>
-
-                            {/* Descripción */}
-                            <p
-                                className="text-[#D9D9D9]"
-                                style={{
-                                    fontFamily: "'Roboto', sans-serif",
-                                    fontWeight: 400,
-                                    fontSize: '18px',
-                                    lineHeight: '22px',
-                                }}
-                            >
-                                {principio.descripcion}
-                            </p>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </section>
         </>

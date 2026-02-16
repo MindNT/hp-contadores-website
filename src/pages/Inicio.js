@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from '../components/navbar';
 import BlueButton from '../utils/BlueButton';
 import SegundaSeccion from './SegundaSeccion';
-import TerceraSeccion from './TerceraSeccion';
 
 const Inicio = () => {
     return (
@@ -13,17 +12,17 @@ const Inicio = () => {
             </div>
 
             {/* Hero Section - Primera sección */}
-            <section className="relative h-screen w-full snap-start overflow-hidden">
+            <section className="relative min-h-screen w-full snap-start overflow-hidden flex items-center py-20 px-8">
                 {/* CONTADORES - Texto de fondo */}
                 <div
-                    className="absolute top-[166px] left-1/2 transform -translate-x-1/2 h-[268px]"
+                    className="absolute top-[140px] left-1/2 transform -translate-x-1/2"
                     style={{
-                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(153, 153, 153, 0.3) 100%)',
+                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(153, 153, 153, 0.25) 100%)',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
                         backgroundClip: 'text',
-                        fontSize: '250px',
-                        lineHeight: '268px',
+                        fontSize: '200px',
+                        lineHeight: '1.2',
                         fontFamily: "'Ropa Sans', sans-serif",
                         fontWeight: 400,
                         textAlign: 'center',
@@ -34,7 +33,7 @@ const Inicio = () => {
                 </div>
 
                 {/* Imagen de la chica */}
-                <div className="absolute left-[456px] top-[166px] w-[600px] h-[816px]">
+                <div className="absolute left-[420px] top-[140px] w-[550px] h-[750px]">
                     <img
                         src={`${process.env.PUBLIC_URL}/images/chica1.svg`}
                         alt="Profesional"
@@ -46,38 +45,41 @@ const Inicio = () => {
                     />
                 </div>
 
-                {/* Contenido principal */}
-                <div className="relative z-10">
-                    {/* Título principal */}
-                    <h1
-                        className="absolute left-[107px] top-[434px] w-[523px] text-[#D9D9D9]"
-                        style={{
-                            fontFamily: "'Roboto', sans-serif",
-                            fontWeight: 400,
-                            fontSize: '65px',
-                            lineHeight: '76px',
-                            textAlign: 'left',
-                        }}
-                    >
-                        LA VERDADERA CONTADURIA PARA EMPRESAS
-                    </h1>
+                {/* Container centrado con max-width */}
+                <div className="w-full max-w-7xl mx-auto">
+                    {/* Contenido principal */}
+                    <div className="relative z-10 max-w-lg">
+                        {/* Título principal */}
+                        <h1
+                            className="text-[#E8E8E8] mb-6"
+                            style={{
+                                fontFamily: "'Roboto', sans-serif",
+                                fontWeight: 300,
+                                fontSize: '42px',
+                                lineHeight: '1.2',
+                                textAlign: 'left',
+                                letterSpacing: '0.5px',
+                            }}
+                        >
+                            La verdadera contaduría para empresas
+                        </h1>
 
-                    {/* Descripción */}
-                    <p
-                        className="absolute left-[107px] top-[682px] w-[523px] text-[#D9D9D9]"
-                        style={{
-                            fontFamily: "'Roboto', sans-serif",
-                            fontWeight: 400,
-                            fontSize: '20px',
-                            lineHeight: '23px',
-                            textAlign: 'left',
-                        }}
-                    >
-                        Deja la complejidad fiscal en manos expertas y recupera tu tiempo para lo que realmente importa: hacer escalar tu negocio. Sin sorpresas, solo resultados.
-                    </p>
+                        {/* Descripción */}
+                        <p
+                            className="text-[#B8B8B8] mb-8"
+                            style={{
+                                fontFamily: "'Roboto', sans-serif",
+                                fontWeight: 300,
+                                fontSize: '16px',
+                                lineHeight: '1.6',
+                                textAlign: 'left',
+                                letterSpacing: '0.2px',
+                            }}
+                        >
+                            Deja la complejidad fiscal en manos expertas y recupera tu tiempo para lo que realmente importa: hacer escalar tu negocio. Sin sorpresas, solo resultados.
+                        </p>
 
-                    {/* Botón CTA */}
-                    <div className="absolute left-[107px] top-[788px]">
+                        {/* Botón CTA */}
                         <BlueButton
                             text="Consultoria gratis"
                             onClick={() => window.open('https://wa.me/5299911884459', '_blank')}
@@ -88,9 +90,6 @@ const Inicio = () => {
 
             {/* Segunda Sección */}
             <SegundaSeccion />
-
-            {/* Tercera Sección */}
-            <TerceraSeccion />
         </div>
     );
 };
