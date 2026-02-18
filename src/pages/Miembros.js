@@ -4,23 +4,17 @@ import Navbar from '../components/navbar';
 const Miembros = () => {
     const miembros = [
         {
-            nombre: '',
-            profesion: '',
-            resumen: '',
+            nombre: 'David',
+            profesion: 'Contador Publico',
+            resumen: 'La contabilidad no es solo cumplimiento, es estrategia. Ayudamos a personas y empresas a cumplir correctamente sus obligaciones fiscales y a tomar decisiones financieras con seguridad y visión a futuro.',
             foto: `${process.env.PUBLIC_URL}/images/miembro1.jpg`,
         },
         {
-            nombre: '',
-            profesion: '',
-            resumen: '',
+            nombre: 'Regina',
+            profesion: 'Contadora Publica',
+            resumen: 'Trabajamos con integridad, responsabilidad y actualización constante. Nuestra misión es proteger el patrimonio de nuestros clientes mediante una planeación fiscal sólida y un cumplimiento oportuno.',
             foto: `${process.env.PUBLIC_URL}/images/miembro2.jpg`,
-        },
-        {
-            nombre: '',
-            profesion: '',
-            resumen: '',
-            foto: `${process.env.PUBLIC_URL}/images/miembro3.jpg`,
-        },
+        }
     ];
 
     return (
@@ -144,7 +138,7 @@ const Miembros = () => {
 
                                     {/* Profesión */}
                                     <p
-                                        className="text-[#1852AE] mb-3"
+                                        className="text-white mb-3"
                                         style={{
                                             fontFamily: "'Roboto', sans-serif",
                                             fontWeight: 400,
