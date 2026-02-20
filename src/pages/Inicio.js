@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Card from '../utils/Cards';
 import Mosaico from '../utils/Mosaico';
@@ -53,6 +54,7 @@ const serviciosData = [
 ];
 
 const Inicio = () => {
+    const navigate = useNavigate();
     return (
         <div>
             {/* Navbar */}
@@ -201,7 +203,7 @@ const Inicio = () => {
                         Contactar ahora
                     </button>
                     <button
-                        onClick={() => window.location.href = '/servicios'}
+                        onClick={() => navigate('/servicios')}
                         className="px-8 py-3 text-white font-semibold text-sm uppercase tracking-widest border border-white/50 transition-all duration-200 hover:bg-white hover:text-[#0A1F44]"
                         style={{ fontFamily: "'Roboto', sans-serif", background: 'transparent' }}
                     >

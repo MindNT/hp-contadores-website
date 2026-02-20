@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavbarMobile from '../components/navbarMobile';
 import FooterMobile from '../components/footerMobile';
 import Card from '../utils/Cards';
@@ -52,6 +53,7 @@ const SectorCard = ({ image, title }) => (
 );
 
 const InicioMobile = () => {
+    const navigate = useNavigate();
     return (
         <div className="bg-white">
             {/* ===== Navbar Mobile ===== */}
@@ -195,7 +197,7 @@ const InicioMobile = () => {
                         Contactar ahora
                     </button>
                     <button
-                        onClick={() => window.location.href = '/servicios'}
+                        onClick={() => navigate('/servicios')}
                         className="w-full py-3.5 text-white font-semibold text-xs uppercase tracking-widest border border-white/50 transition-all duration-200"
                         style={{ background: 'transparent', fontFamily: "'Roboto', sans-serif" }}
                     >
