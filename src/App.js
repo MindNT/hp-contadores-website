@@ -6,6 +6,7 @@ import Servicios from './pages/Servicios';
 import ServiciosMobile from './pages/ServiciosMobile';
 import Faqs from './pages/Faqs';
 import FaqsMobile from './pages/FaqsMobile';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div
         className="App"
         style={{ minHeight: '100vh', width: '100%' }}
