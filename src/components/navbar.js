@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BlueButton from '../utils/BlueButton';
+import WhiteButton from '../utils/WhiteButton';
 
 const Navbar = () => {
     const navItems = [
-        { name: 'Principios', href: '/principios', isRoute: true },
-        { name: 'FAQs', href: '/faqs', isRoute: true },
-        { name: 'Miembros', href: '/miembros', isRoute: true },
+        { name: 'Inicio', href: '/', isRoute: true },
         { name: 'Servicios', href: '/servicios', isRoute: true },
+        { name: 'FAQs', href: '/faqs', isRoute: true },
     ];
 
     return (
@@ -15,7 +14,7 @@ const Navbar = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            padding: '20px 60px',
+            padding: '20px 80px',
             background: 'transparent',
             position: 'absolute',
             top: 0,
@@ -75,9 +74,9 @@ const Navbar = () => {
                     )
                 ))}
 
-                {/* Botón Agendar cita */}
-                <BlueButton
-                    text="Agendar cita"
+                {/* Botón Contactar */}
+                <WhiteButton
+                    text="Contactar"
                     onClick={() => window.open('https://wa.me/529991188459', '_blank')}
                 />
             </div>

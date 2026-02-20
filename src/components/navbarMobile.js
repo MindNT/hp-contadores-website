@@ -1,165 +1,116 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import CircleButton from '../utils/CircleButton';
 
 const NavbarMobile = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [open, setOpen] = useState(false);
 
     const navItems = [
-        { name: 'Principios', href: '/principios', isRoute: true },
-        { name: 'FAQs', href: '/faqs', isRoute: true },
-        { name: 'Miembros', href: '/miembros', isRoute: true },
-        { name: 'Servicios', href: '/servicios', isRoute: true },
+        { name: 'Inicio', href: '/' },
+        { name: 'Servicios', href: '/servicios' },
+        { name: 'FAQs', href: '/faqs' },
     ];
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    };
 
     return (
         <>
-            {/* Navbar fijo */}
-            <nav style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '16px 20px',
-                background: 'rgba(10, 34, 72, 0.95)',
-                backdropFilter: 'blur(10px)',
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 1000,
-                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-            }}>
-                {/* Logo a la izquierda */}
-                <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+            {/* Barra superior */}
+            <nav
+                className="flex items-center justify-between px-5 py-4 absolute top-0 left-0 right-0 z-[1000]"
+                style={{ background: 'transparent' }}
+            >
+                {/* Logo */}
+                <Link to="/" onClick={() => setOpen(false)}>
                     <img
                         src={`${process.env.PUBLIC_URL}/images/logo.svg`}
                         alt="HP Contadores Logo"
-                        style={{ height: '40px' }}
+                        style={{ height: '44px' }}
                     />
                 </Link>
 
-                {/* Contenedor derecho: WhatsApp + Hamburger */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                    {/* Botón circular de WhatsApp */}
-                    <CircleButton
-                        icon={`${process.env.PUBLIC_URL}/images/whatsaap-icon.svg`}
-                        size="40px"
-                        onClick={() => {
-                            window.open('https://wa.me/529991188459', '_blank');
+                {/* Botón hamburguesa */}
+                <button
+                    onClick={() => setOpen(!open)}
+                    className="flex flex-col justify-center items-center gap-[5px] w-9 h-9 focus:outline-none"
+                    aria-label="Abrir menú"
+                >
+                    <span
+                        className="block h-[2px] w-6 bg-white rounded transition-all duration-300"
+                        style={{
+                            transform: open ? 'translateY(7px) rotate(45deg)' : 'none',
                         }}
                     />
-
-                    {/* Botón hamburguesa */}
-                    <button
-                        onClick={toggleMenu}
+                    <span
+                        className="block h-[2px] w-6 bg-white rounded transition-all duration-300"
+                        style={{ opacity: open ? 0 : 1 }}
+                    />
+                    <span
+                        className="block h-[2px] w-6 bg-white rounded transition-all duration-300"
                         style={{
-                            background: 'none',
-                            border: 'none',
-                            cursor: 'pointer',
-                            padding: '8px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '4px',
+                            transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none',
                         }}
-                        aria-label="Menu"
-                    >
-                        <div style={{
-                            width: '24px',
-                            height: '2px',
-                            background: 'white',
-                            transition: 'all 0.3s',
-                            transform: isMenuOpen ? 'rotate(45deg) translateY(6px)' : 'none',
-                        }} />
-                        <div style={{
-                            width: '24px',
-                            height: '2px',
-                            background: 'white',
-                            transition: 'all 0.3s',
-                            opacity: isMenuOpen ? 0 : 1,
-                        }} />
-                        <div style={{
-                            width: '24px',
-                            height: '2px',
-                            background: 'white',
-                            transition: 'all 0.3s',
-                            transform: isMenuOpen ? 'rotate(-45deg) translateY(-6px)' : 'none',
-                        }} />
-                    </button>
-                </div>
+                    />
+                </button>
             </nav>
 
-            {/* Menú desplegable */}
-            <div style={{
-                position: 'fixed',
-                top: '72px',
-                left: 0,
-                right: 0,
-                background: 'rgba(10, 34, 72, 0.98)',
-                backdropFilter: 'blur(10px)',
-                transform: isMenuOpen ? 'translateY(0)' : 'translateY(-100%)',
-                transition: 'transform 0.3s ease-in-out',
-                zIndex: 999,
-                padding: '20px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                overflow: 'hidden',
-                visibility: isMenuOpen ? 'visible' : 'hidden',
-                opacity: isMenuOpen ? 1 : 0,
-            }}>
-                {/* Navigation Items */}
-                <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '20px',
-                }}>
-                    {navItems.map((item, index) => (
-                        item.isRoute ? (
-                            <Link
-                                key={index}
-                                to={item.href}
-                                onClick={closeMenu}
-                                style={{
-                                    color: 'white',
-                                    textDecoration: 'none',
-                                    fontSize: '18px',
-                                    fontWeight: '400',
-                                    padding: '12px 0',
-                                    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-                                    transition: 'opacity 0.3s',
-                                }}
-                                onMouseEnter={(e) => e.target.style.opacity = '0.7'}
-                                onMouseLeave={(e) => e.target.style.opacity = '1'}
-                            >
-                                {item.name}
-                            </Link>
-                        ) : (
-                            <a
-                                key={index}
-                                href={item.href}
-                                onClick={closeMenu}
-                                style={{
-                                    color: 'white',
-                                    textDecoration: 'none',
-                                    fontSize: '18px',
-                                    fontWeight: '400',
-                                    padding: '12px 0',
-                                    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-                                    transition: 'opacity 0.3s',
-                                }}
-                                onMouseEnter={(e) => e.target.style.opacity = '0.7'}
-                                onMouseLeave={(e) => e.target.style.opacity = '1'}
-                            >
-                                {item.name}
-                            </a>
-                        )
+            {/* Overlay + Menú deslizable */}
+            {open && (
+                <div
+                    className="fixed inset-0 z-[999]"
+                    onClick={() => setOpen(false)}
+                    style={{ background: 'rgba(0,0,0,0.45)' }}
+                />
+            )}
+
+            <div
+                className="fixed top-0 right-0 h-full z-[1000] flex flex-col transition-transform duration-300"
+                style={{
+                    width: '260px',
+                    background: '#0A1F44',
+                    transform: open ? 'translateX(0)' : 'translateX(100%)',
+                    boxShadow: '-4px 0 24px rgba(0,0,0,0.25)',
+                }}
+            >
+                {/* Cabecera del drawer */}
+                <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
+                    <img
+                        src={`${process.env.PUBLIC_URL}/images/logo.svg`}
+                        alt="HP Contadores"
+                        style={{ height: '36px' }}
+                    />
+                    <button
+                        onClick={() => setOpen(false)}
+                        className="text-white/70 hover:text-white text-2xl leading-none focus:outline-none"
+                    >
+                        ✕
+                    </button>
+                </div>
+
+                {/* Links de navegación */}
+                <nav className="flex flex-col px-6 pt-8 gap-2 flex-grow">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.name}
+                            to={item.href}
+                            onClick={() => setOpen(false)}
+                            className="text-white/85 hover:text-white text-base font-medium py-3 border-b border-white/10 transition-colors duration-200"
+                            style={{ fontFamily: "'Roboto', sans-serif", textDecoration: 'none' }}
+                        >
+                            {item.name}
+                        </Link>
                     ))}
+                </nav>
+
+                {/* Botón Contactar */}
+                <div className="px-6 pb-10">
+                    <button
+                        onClick={() => {
+                            setOpen(false);
+                            window.open('https://wa.me/529991188459', '_blank');
+                        }}
+                        className="w-full py-3 text-white font-semibold text-sm uppercase tracking-widest transition-opacity duration-200 hover:opacity-85"
+                        style={{ background: '#1852AE', fontFamily: "'Roboto', sans-serif" }}
+                    >
+                        Contactar
+                    </button>
                 </div>
             </div>
         </>
